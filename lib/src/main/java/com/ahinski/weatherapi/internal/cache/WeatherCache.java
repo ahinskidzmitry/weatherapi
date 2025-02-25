@@ -21,7 +21,7 @@ public class WeatherCache {
         };
     }
 
-    public void put(String key, String entry) {
+    public synchronized void put(String key, String entry) {
         CacheEntry cacheEntry = new CacheEntry(entry, System.currentTimeMillis());
         cache.put(key, cacheEntry);
     }
